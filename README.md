@@ -1,5 +1,7 @@
 # Important Data about next.js
 
+This notes are the result of do [this tutorial](https://nextjs.org/learn/basics/create-nextjs-app) with some modifications like add SASS and TypeScript. 
+
 ## Routing
 In Next.js the routing is made taking the **pages** folder structure as the source of truth, their functioning is pretty simple, if we need a file in the route:
 
@@ -9,7 +11,7 @@ In Next.js the routing is made taking the **pages** folder structure as the sour
 
 
 ### `<Link />` component
-Allows to do *client side navigation* this means that the page transition happens using JavaScript, instead of the browser (with the <a> tag, the navigation is with the browser) when the navigation is in the browser the page is recharged. Apart of this, the *<Link>* component function almost like an *<a>* tag but taking in account the next.js Routing, as example, if we need to go to the route:
+Allows to do *client side navigation* this means that the page transition happens using JavaScript, instead of the browser -with the `<a>` tag, the navigation is with the browser- when the navigation is in the browser the page is recharged. Apart of this, the `<Link>` component function almost like an `<a>` tag but taking in account the next.js Routing, as example, if we need to go to the route:
 
 * *domainName.com/posts/first-post*, the `href` property of our Link component will be `/posts/first-post`
 * *domainName.com*, the `href` property of our Link component will be `/`
@@ -37,5 +39,24 @@ More information about the routing [here is the documentation](https://nextjs.or
 
 * Public directory can't be renamed
 * The files inside the *public directory* can't be named as any file in the *pages folder*yarn dev
+
+### Metadata
+* Is added with the `<Head>` component the documentation of it is [here](https://nextjs.org/docs/api-reference/next/head)
+
+### Sass config
+* We can find the tutorial to use SCSS files in our project [here](https://nextjs.org/blog/next-9-3#built-in-sass-support-for-global-stylesheets), this project is already using Sass
+* Since Next.js 9.3 Sass is natively supported, for this reason the [next-sass plugin](https://github.com/zeit/next-plugins/tree/master/packages/next-sass) isn't required and instead of node-sass, the dependency is sass.
+
+  #### About the styles configuration
+    * To set global styles, first is necessary create a *_app.tsx* file (*.js* if the project doesn't use Typescript) with the same config used in this project, in this file will be imported all the stylesheet needed globally. 
+    * Next.js only accepts [SASS modules](https://nextjs.org/blog/next-9-3#built-in-sass-css-module-support-for-component-level-styles) or global stylesheets.
+    * The module stylesheet can't be imported with destructuring, to use the classes we need to do something like:
+
+    ```javascript
+    import styles from "./layout.module.scss";
+
+    <div className={`${styles.container}`}></div>
+    ```
+  
 
 ## Static generation (SG) and server-side rendering (SSR) 
