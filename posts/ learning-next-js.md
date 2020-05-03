@@ -1,3 +1,9 @@
+---
+title: 'Learning Next.js notes'
+date: '2020-05-02'
+---
+
+
 # Important Data about next.js
 
 This notes are the result of do [this tutorial](https://nextjs.org/learn/basics/create-nextjs-app) with some modifications like add SASS and TypeScript. 
@@ -74,13 +80,13 @@ More information about the routing [here is the documentation](https://nextjs.or
   * Is the most performing way because the page isn't generated every time.
 * **Server Side Rendering** 
   * Pre-render the page in every request.
-  * Is the best option if the data is updated *after the build time*.
+  * Is the best option if the data is updated frequently.
   * The pre-rendered can be completely by passed in favor of client-side javascript render in order to populate the data
 * **Important**, In development mode (when you run npm run dev or yarn dev), every page is pre-rendered on each request — even for pages that use Static Generation.
 
 ### Static generation with external data (getStaticProps())
-* The build process is, `next build -> fetch data -> generates the HTML`, this generated HTML include all the data fetched in the build, *for this reason `getStaticProps()` isn't recommended if the data will change in every user page request, in this case, is better try Server-side Rendering or skipping pre-rendering and use javascript render to fetch the data on client side.* 
-* `getStaticProps` runs only on the server-side. It will never be run on the client-side. It won’t even be included in the JS bundle for the browser. That means you can write code such as direct database queries without them being sent to browsers.
+* The process is, next build -> fetch data -> generates the HTML
 * **Important**, In development mode, getStaticProps runs on each request instead.
 
 **Notes:**, the markdown file in the posts folder has a metadata section at the top containing title and date. This is called YAML Front Matter, which can be parsed using a library called [gray-matter](https://github.com/jonschlinkert/gray-matter).
+
