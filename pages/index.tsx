@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
-import { getSortedPostsData, Metadata } from "../utils/parseLocalData";
+import { getSortedPostsData, Metadata } from "../utils/parsePostData";
 
 export default function Home({ allPostsData }) {
   return (
