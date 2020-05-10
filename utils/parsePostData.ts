@@ -1,6 +1,7 @@
 import { readdirSync, readFileSync } from "fs";
 import path from "path";
 import remark from "remark";
+// @ts-ignore - This library doesn't have types at this moment
 import html from "remark-html";
 import matter from "gray-matter";
 
