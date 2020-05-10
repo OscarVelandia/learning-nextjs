@@ -1,5 +1,7 @@
 import Head from "next/head";
-import Layout, { siteTitle } from "../components/layout";
+import Link from "next/link";
+import Date from "../components/Date";
+import Layout, { siteTitle } from "../components/Layout";
 import { getSortedPostsData, Metadata } from "../utils/parsePostData";
 
 export default function Home({ allPostsData }) {
@@ -14,11 +16,13 @@ export default function Home({ allPostsData }) {
         <ul className="list">
           {allPostsData.map(({ id, date, title }) => (
             <li className="listItem" key={id}>
-              {title}
+              <Link href="/posts/[id]" as={`/posts/${id}`}>
+                <a>{title}</a>
+              </Link>
               <br />
-              {id}
-              <br />
-              {date}
+              <small className="lightText">
+                <Date dateString={date} />
+              </small>
             </li>
           ))}
         </ul>
@@ -28,6 +32,7 @@ export default function Home({ allPostsData }) {
 }
 export async function getStaticProps() {
   const allPostsData: Metadata[] = getSortedPostsData();
+
   return {
     props: {
       allPostsData,

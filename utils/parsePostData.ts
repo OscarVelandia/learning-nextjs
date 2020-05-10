@@ -10,6 +10,7 @@ export interface Metadata {
   date: string;
 }
 
+// path is a node.js method
 const postsDirectory = path.join(process.cwd(), "posts");
 
 export function getAllPostIds() {
