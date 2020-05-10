@@ -3,13 +3,21 @@ import Date from "../../components/Date";
 import Layout from "../../components/Layout";
 import Head from "next/head";
 
+interface Props {
+  postData: {
+    title: string;
+    date: string;
+    contentHtml: string;
+  };
+}
+
 interface PostsId {
   params: {
     id: string;
   };
 }
 
-export default function Post({ postData }) {
+export default function Post({ postData }: Props) {
   return (
     <Layout>
       <Head>

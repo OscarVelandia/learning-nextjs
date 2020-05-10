@@ -5,7 +5,11 @@ import styles from "./layout.module.scss";
 const name = "Oscar Velandia";
 export const siteTitle = "Next.js Sample Website";
 
-export default function Layout({ children, home }: { children: any; home?: any }) {
+interface Props {
+  children: React.ReactNode;
+  home?: boolean;
+}
+export default function Layout({ children, home }: Props) {
   return (
     <div className={`${styles.container}`}>
       <Head>

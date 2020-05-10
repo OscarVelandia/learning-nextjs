@@ -148,3 +148,13 @@ More information about the routing [here is the documentation](https://nextjs.or
 
 ## Upload the project to Vercel
 * [This](https://nextjs.org/learn/basics/deploying-nextjs-app/github) are the steps to deploy the project, is very straightforward
+
+## Adding TypeScript
+* About the difference between [JSX.Element, ReactNode and ReactElement](https://stackoverflow.com/questions/58123398/when-to-use-jsx-element-vs-reactnode-vs-reactelement)
+* About the [Next.js types](https://nextjs.org/docs/basic-features/typescript) 
+
+
+>### General links
+>* [About data fetching](https://nextjs.org/docs/basic-features/data-fetching)
+>* [About environment variables](https://nextjs.org/docs/api-reference/next.config.js/environment-variables)
+>* [About AMP](https://nextjs.org/docs/advanced-features/amp-support/introduction)

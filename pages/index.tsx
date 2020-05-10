@@ -4,9 +4,17 @@ import Date from "../components/Date";
 import Layout, { siteTitle } from "../components/Layout";
 import { getSortedPostsData, Metadata } from "../utils/parsePostData";
 
-export default function Home({ allPostsData }) {
+interface Props {
+  allPostsData: {
+    date: string;
+    title: string;
+    id: string;
+  }[];
+}
+
+export default function Home({ allPostsData }: Props) {
   return (
-    <Layout home>
+    <Layout home={true}>
       <Head>
         <title>{siteTitle}</title>
       </Head>
