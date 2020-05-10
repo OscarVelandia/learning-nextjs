@@ -20,7 +20,7 @@ export default function Home({ allPostsData }: Props) {
       </Head>
       <section className="headingMd">…</section>
       <section className="headingMd padding1px">
-        <h2 className="headingLg">Blog</h2>
+        <h2 className="headingLg">Posts</h2>
         <ul className="list">
           {allPostsData.map(({ id, date, title }) => (
             <li className="listItem" key={id}>
